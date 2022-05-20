@@ -1,3 +1,7 @@
 ﻿namespace Library {
-    class Library
+    class Library {
+        static void Main() {
+            Console.WriteLine("Hello, World!");
+        }
+    }
 }
