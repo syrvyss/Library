@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MJ0PIQbryoNaN18R1YIxJrIcUmcZQeEGLdpDTMLLzsdfb/7BUdbHFUkkz/47pxCzvWgsQuy9AnCvy509laBVeg==",
+  "dgSpecHash": "FAh9dqcJ4a6o4ocKRXKL6WsyJSi+gRrToF6FQgwQkzpamXiymBb7epWHmZEPcvd/ZlpjygA5J/Z2cYI3Qiqi+w==",
   "success": true,
-  "projectFilePath": "/Users/dkNikLue/dev/cs/Library/src/Library/Library.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/dash/dev/cs/large/Library/src/Library/Library.csproj",
+  "expectedPackageFiles": [
+    "/home/dash/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.2/microsoft.aspnetcore.app.ref.6.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
