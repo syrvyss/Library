@@ -1,7 +1,8 @@
 ﻿namespace Library {
     class Program {
         static void Main() {
-            Console.WriteLine("Hello, World!");
+            Library lib = new Library("Sonderborg bibliotek");
+            Console.WriteLine(lib.GetLibrary());
         }
     }
 }
