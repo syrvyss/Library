@@ -1,0 +1,15 @@
+/Users/dkNikLue/dev/cs/Library/src/Library/bin/Debug/net6.0/Library
+/Users/dkNikLue/dev/cs/Library/src/Library/bin/Debug/net6.0/Library.deps.json
+/Users/dkNikLue/dev/cs/Library/src/Library/bin/Debug/net6.0/Library.runtimeconfig.json
+/Users/dkNikLue/dev/cs/Library/src/Library/bin/Debug/net6.0/Library.dll
+/Users/dkNikLue/dev/cs/Library/src/Library/bin/Debug/net6.0/ref/Library.dll
+/Users/dkNikLue/dev/cs/Library/src/Library/bin/Debug/net6.0/Library.pdb
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.csproj.AssemblyReference.cache
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.AssemblyInfoInputs.cache
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.AssemblyInfo.cs
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.csproj.CoreCompileInputs.cache
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.dll
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/ref/Library.dll
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.pdb
+/Users/dkNikLue/dev/cs/Library/src/Library/obj/Debug/net6.0/Library.genruntimeconfig.cache
