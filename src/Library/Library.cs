@@ -2,7 +2,7 @@ using System;
 
 public class Library {
     string _libraryName;
-    List<Loaner> _loanerList = new List<Loaner>();
+    List<Loaner> loanerList = new List<Loaner>();
     public Library(string name) {
         this._libraryName = name;
     }
@@ -12,6 +12,7 @@ public class Library {
     }
     public void CreateLoaner(int number, string name) {
         this._loanerList.Add(new Loaner(number, name));
+        Console.WriteLine("Added Loaner to database");
     }
     public string GetLoaner(int number) {
         List<Loaner> loaner = this._loanerList.Where(x => x._loanerNumber == number).ToList();
