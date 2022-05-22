@@ -1,6 +1,6 @@
 using System;
 
-class Library {
+public class Library {
     string _libraryName;
     List<Loaner> _loanerList = new List<Loaner>();
     public Library(string name) {

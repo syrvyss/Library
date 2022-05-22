@@ -19,7 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <Reference Include="Program">
-      <HintPath>../Library/Library/bin/Debug/net6.0/Library.dll</HintPath>
+      <HintPath>../Library/bin/Debug/net6.0/Library.dll</HintPath>
     </Reference>
   </ItemGroup>
 
