@@ -11,9 +11,12 @@ class Library {
             this._libraryName, DateTime.Today.ToString());
     }
     public void CreateLoaner(int number, string name) {
-        this._loanerList.Append(new Loaner(number, name));
+        this._loanerList.Add(new Loaner(number, name));
     }
     public string GetLoaner(int number) {
+        if (number <= 0 || number > this._loanerList.Count) {
+            return "Sorry, wrong index. numbers <= 0 are invalid, index starts at 1";
+        }
         Loaner loaner = this._loanerList[number-1];
         return String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>", 
             loaner._loanerNumber, loaner._loanerName, this._libraryName);
