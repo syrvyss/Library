@@ -14,11 +14,12 @@ public class Library {
         this._loanerList.Add(new Loaner(number, name));
     }
     public string GetLoaner(int number) {
-        if (number <= 0 || number > this._loanerList.Count) {
-            return "Sorry, wrong index. numbers <= 0 are invalid, index starts at 1";
-        }
-        Loaner loaner = this._loanerList[number-1];
+        List<Loaner> loaner = this._loanerList.Where(x => x._loanerNumber == number).ToList();
+        if (loaner.Count > 1 || loaner.Count == 0)
+            return "Sorry, duplicate loaner or loaner not found";
+
         return String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>", 
-            loaner._loanerNumber, loaner._loanerName, this._libraryName);
+            loaner.First()._loanerNumber, loaner.First()._loanerName, this._libraryName);
+
     }
 }
