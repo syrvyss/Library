@@ -1,7 +1,10 @@
-﻿namespace Library {
-    class Library {
+﻿namespace MyLibrary {
+    class Program {
         static void Main() {
-            Console.WriteLine("Hello, World!");
+            Library lib = new Library("Sonderborg bibliotek");
+            Console.WriteLine(lib.GetLibrary());
+            lib.CreateLoaner(1, "Adrian");
+            Console.WriteLine(lib.GetLoaner(1));
         }
     }
 }
