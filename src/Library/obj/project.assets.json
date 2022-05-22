@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/dash/.nuget/packages/": {}
+    "/Users/dkNikLue/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/dash/dev/cs/large/Library/src/Library/Library.csproj",
+      "projectUniqueName": "/Users/dkNikLue/dev/cs/Library/src/Library/Library.csproj",
       "projectName": "Library",
-      "projectPath": "/home/dash/dev/cs/large/Library/src/Library/Library.csproj",
-      "packagesPath": "/home/dash/.nuget/packages/",
-      "outputPath": "/home/dash/dev/cs/large/Library/src/Library/obj/",
+      "projectPath": "/Users/dkNikLue/dev/cs/Library/src/Library/Library.csproj",
+      "packagesPath": "/Users/dkNikLue/.nuget/packages/",
+      "outputPath": "/Users/dkNikLue/dev/cs/Library/src/Library/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/dash/.nuget/NuGet/NuGet.Config"
+        "/Users/dkNikLue/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -53,18 +53,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.2, 6.0.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/Cellar/dotnet/6.0.104_1/libexec/sdk/6.0.104/RuntimeIdentifierGraph.json"
       }
     }
   }
