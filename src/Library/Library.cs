@@ -10,25 +10,24 @@ public class Library {
         return string.Format("Welcome to {0} - the date today is {1}",
             this._libraryName, DateTime.Today.ToString());
     }
-    public string CreateLoaner(int number, string name) {
-        this.loanerList.Add(new Loaner(number, name));
+    public string CreateLoaner(int number, string name, string email) {
+        this.loanerList.Add(new Loaner(number, name, email));
         return "Added Loaner to database";
     }
     public string GetLoaner(int number) {
-        List<Loaner> loaner = this.loanerList.Where(x => x._loanerNumber == number).ToList();
+        List<Loaner> loaner = this.loanerList.Where(x => x.number == number).ToList();
         if (loaner.Count > 1 || loaner.Count == 0)
             return "Sorry, duplicate loaner or loaner not found";
 
-        return String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>", 
-            loaner.First()._loanerNumber, loaner.First()._loanerName, this._libraryName);
+        return String.Format("Loaner number: <{0}> - Email: <{1}> - Name: <{2}> is loaner at: <{3}>", 
+            loaner.First().number, loaner.First().email, loaner.First().name, this._libraryName);
     }
     public string GetAllLoaner() {
         string str = "";
         foreach (var item in loanerList)
         {
-            str += String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>\n",
-                item._loanerNumber, item._loanerName, this._libraryName);
-
+            str += String.Format("Loaner number: <{0}> - Email: <{1}> - Name: <{2}> is loaner at: <{3}>\n",
+                item.number, item.email, item.name, this._libraryName);
         }
         return str;
     }

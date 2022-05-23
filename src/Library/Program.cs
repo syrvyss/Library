@@ -14,9 +14,12 @@ namespace MyLibrary {
                         Console.Write("Enter id: ");
                         int id = int.Parse(Console.ReadLine());
                         
+                        Console.Write("Enter email: ");
+                        string email = Console.ReadLine();
+
                         Console.Write("Enter name: ");
                         string name = Console.ReadLine();
-                        lib.CreateLoaner(id, name);
+                        lib.CreateLoaner(id, name, email);
                         break;
 
                     case 'b':
