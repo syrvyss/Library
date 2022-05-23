@@ -11,11 +11,11 @@ public class Library {
             this._libraryName, DateTime.Today.ToString());
     }
     public string CreateLoaner(int number, string name) {
-        this._loanerList.Add(new Loaner(number, name));
+        this.loanerList.Add(new Loaner(number, name));
         return "Added Loaner to database";
     }
     public string GetLoaner(int number) {
-        List<Loaner> loaner = this._loanerList.Where(x => x._loanerNumber == number).ToList();
+        List<Loaner> loaner = this.loanerList.Where(x => x._loanerNumber == number).ToList();
         if (loaner.Count > 1 || loaner.Count == 0)
             return "Sorry, duplicate loaner or loaner not found";
 
