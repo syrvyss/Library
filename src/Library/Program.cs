@@ -19,7 +19,8 @@ namespace MyLibrary {
 
                         Console.Write("Enter name: ");
                         string name = Console.ReadLine();
-                        lib.CreateLoaner(id, name, email);
+                        Console.WriteLine(lib.CreateLoaner(id, name, email));
+                        Console.ReadLine();
                         break;
 
                     case 'b':
