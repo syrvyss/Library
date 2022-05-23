@@ -21,6 +21,15 @@ public class Library {
 
         return String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>", 
             loaner.First()._loanerNumber, loaner.First()._loanerName, this._libraryName);
+    }
+    public string GetAllLoaner() {
+        string str = "";
+        foreach (var item in loanerList)
+        {
+            str += String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>\n",
+                item._loanerNumber, item._loanerName, this._libraryName);
 
+        }
+        return str;
     }
 }
