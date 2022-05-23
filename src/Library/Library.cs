@@ -15,20 +15,19 @@ public class Library {
         return "Added Loaner to database";
     }
     public string GetLoaner(int number) {
-        List<Loaner> loaner = this.loanerList.Where(x => x._loanerNumber == number).ToList();
+        List<Loaner> loaner = this.loanerList.Where(x => x.number == number).ToList();
         if (loaner.Count > 1 || loaner.Count == 0)
             return "Sorry, duplicate loaner or loaner not found";
 
         return String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>", 
-            loaner.First()._loanerNumber, loaner.First()._loanerName, this._libraryName);
+            loaner.First().number, loaner.First().name, this._libraryName);
     }
     public string GetAllLoaner() {
         string str = "";
         foreach (var item in loanerList)
         {
             str += String.Format("Loaner number: <{0}> - Name: <{1}> is loaner at: <{2}>\n",
-                item._loanerNumber, item._loanerName, this._libraryName);
-
+                item.number, item.name, this._libraryName);
         }
         return str;
     }

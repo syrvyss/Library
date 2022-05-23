@@ -1,4 +1,4 @@
 class Person {
-    public string name { get; set; }
-    public string email { get; set; }
+    public string name { get; }
+    public string email { get; }
 }
