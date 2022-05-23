@@ -4,7 +4,9 @@
             Library lib = new Library("Sonderborg bibliotek");
             Console.WriteLine(lib.GetLibrary());
             lib.CreateLoaner(1, "Adrian");
-            Console.WriteLine(lib.GetLoaner(1));
+            lib.CreateLoaner(2, "dav");
+            lib.CreateLoaner(4, "Nikolaj");
+            Console.WriteLine(lib.GetAllLoaner());
         }
     }
 }
