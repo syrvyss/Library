@@ -10,9 +10,9 @@ public class Library {
         return string.Format("Welcome to {0} - the date today is {1}",
             this._libraryName, DateTime.Today.ToString());
     }
-    public void CreateLoaner(int number, string name) {
+    public string CreateLoaner(int number, string name) {
         this._loanerList.Add(new Loaner(number, name));
-        Console.WriteLine("Added Loaner to database");
+        return "Added Loaner to database";
     }
     public string GetLoaner(int number) {
         List<Loaner> loaner = this._loanerList.Where(x => x._loanerNumber == number).ToList();
