@@ -28,6 +28,20 @@ namespace MyLibrary {
                         Console.ReadLine();
                         break;
 
+                    case 'c':
+                        Console.WriteLine("Enter title: ");
+                        string title = Console.ReadLine();
+
+                        Console.WriteLine("Enter Author: ");
+                        string author = Console.ReadLine();
+
+                        Console.WriteLine("Enter User index: ");
+                        int user = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(lib.LoanBook(new Book(title, author), user));
+                        Console.ReadLine();
+                        break;
+
                     case 'x':
                         Console.WriteLine("\nGoodbye {0}!", Environment.MachineName);
                         Console.ReadLine();
@@ -47,6 +61,8 @@ namespace MyLibrary {
             Console.WriteLine("Options below:");
             Console.WriteLine("a: Create Loaner");
             Console.WriteLine("b: Output Loaners");
+            Console.WriteLine("c: Add Book");
+            Console.WriteLine("d: Remove Book");
             Console.WriteLine("x: Finish");
             Console.WriteLine("--------------------------");
         }

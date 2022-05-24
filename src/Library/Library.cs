@@ -37,4 +37,20 @@ public class Library {
         }
         return str;
     }
+    public string LoanBook(Book book, int loanerNum) {
+        List<Loaner> loaner = this.loanerList.Where(x => x.number == loanerNum).ToList();
+        if (loaner.Count < 1)
+            return "Sorry, duplicate loaner or loaner not found";
+
+        List<Loaner> bookCheck = loaner.Where(x => x.books.Contains(book)).ToList();
+        
+        if (bookCheck.Count >= 1) {
+            return "Sorry, cannot loan same book twice.";
+        }
+
+        for (int i = 0; i < loaner.Count; i++) {
+            loaner[i].books.Add(book);
+        }
+        return "Added book!";
+    }
 }
