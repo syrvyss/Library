@@ -23,7 +23,7 @@ public class Library {
     }
     public string GetLoaner(int number) { // also works as FindLoaner method in "options"
         List<Loaner> loaner = this.loanerList.Where(x => x.number == number).ToList();
-        if (loaner.Count > 1 || loaner.Count == 0)
+        if (loaner.Count != 1)
             return "Sorry, duplicate loaner or loaner not found";
 
         return String.Format("Loaner number: <{0}> - Email: <{1}> - Name: <{2}> is loaner at: <{3}>", 
@@ -40,7 +40,7 @@ public class Library {
     }
     public string LoanBook(Book book, int loanerNum) {
         List<Loaner> loaner = this.loanerList.Where(x => x.number == loanerNum).ToList();
-        if (loaner.Count < 1)
+        if (loaner.Count != 1)
             return "Sorry, duplicate loaner or loaner not found";
 
         List<Loaner> bookCheck = loaner.Where(x => x.books.Contains(book)).ToList();
@@ -53,6 +53,22 @@ public class Library {
             loaner[i].books.Add(book);
         }
         return "Added book!";
+    }
+    public string RemoveBook(int loanerNum, string title) {
+        List<Loaner> loaner = this.loanerList
+            .Where(x => x.number == loanerNum).ToList();
+        if (loaner.Count != 1)
+            return "Sorry, duplicate loaner or loaner not found";
+
+        int bookNum = loaner.First().books
+            .Select(x => x.title == title)
+            .ToList().Count;
+
+        if (bookNum < 1)
+            return "Sorry, could not find book";
+
+        loaner.First().books.RemoveAll(x => x.title == title);
+        return "Removed book!";
     }
     public string ShowBooks(int loanerNum) {
         string str = "";
