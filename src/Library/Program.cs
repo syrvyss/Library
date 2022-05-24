@@ -42,6 +42,17 @@ namespace MyLibrary {
                         Console.ReadLine();
                         break;
 
+                    case 'd':
+                        Console.Write("Enter User index: ");
+                        int userIndex = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter title: ");
+                        string bookTitle = Console.ReadLine();
+
+                        Console.WriteLine(lib.RemoveBook(userIndex, bookTitle));
+                        Console.ReadLine();
+                        break;
+
                     case 'e':
                         Console.Write("Enter User index: ");
                         int index = int.Parse(Console.ReadLine());
