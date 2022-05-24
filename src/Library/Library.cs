@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 public class Library {
     string _libraryName;
@@ -52,5 +53,21 @@ public class Library {
             loaner[i].books.Add(book);
         }
         return "Added book!";
+    }
+    public string ShowBooks(int loanerNum) {
+        string str = "";
+        List<Book> books = this.loanerList
+            .Where(x => x.number == loanerNum)
+            .Select(x => x.books)
+            .ToList().FirstOrDefault();
+
+        if (books.Count == 0)
+            return "Sorry, no books detected.";
+
+        foreach (var item in books) {
+            str += String.Format("Title: {0} - Author: {1}", item.title, item.author);
+        }
+
+        return str;
     }
 }
