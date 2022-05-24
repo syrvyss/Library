@@ -1,6 +1,6 @@
 using System;
 
-class Book {
+public class Book {
     public string title { get; init; }
     public string author { get; init; }
     public DateTime checkoutDate { get; init; }
