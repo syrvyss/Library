@@ -42,12 +42,20 @@ namespace MyLibrary {
                         Console.ReadLine();
                         break;
 
+                    case 'e':
+                        Console.Write("Enter User index: ");
+                        int index = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(lib.ShowBooks(index));
+                        Console.ReadLine();
+                        break;
+
                     case 'x':
                         Console.WriteLine("\nGoodbye {0}!", Environment.MachineName);
                         Console.ReadLine();
                         System.Environment.Exit(1);
                         break;
-                    
+                        
                     default:
                         Console.WriteLine("Try again, wrong input.");
                         continue;
@@ -63,6 +71,7 @@ namespace MyLibrary {
             Console.WriteLine("b: Output Loaners");
             Console.WriteLine("c: Add Book");
             Console.WriteLine("d: Remove Book");
+            Console.WriteLine("e: Show Books");
             Console.WriteLine("x: Finish");
             Console.WriteLine("--------------------------");
         }
