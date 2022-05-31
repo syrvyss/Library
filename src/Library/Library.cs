@@ -7,12 +7,14 @@ public class Library {
     public Library(string name) {
         this._libraryName = name;
     }
+
     public string GetLibrary() {
         return string.Format("Welcome to {0} - the date today is {1}",
             this._libraryName, DateTime.Today.ToString());
     }
+
     public string CreateLoaner(int number, string name, string email) {
-        List<Loaner> loaner = this._loanerList
+        List<Loaner> loaner = this._loanerList // get loaner with requirements
             .Where(x => x.number == number || x.name == name || x.email == email)
             .ToList();
         if (loaner.Count >= 1)
@@ -21,6 +23,7 @@ public class Library {
         this._loanerList.Add(new Loaner(number, name, email));
         return "Added Loaner to database";
     }
+
     public string GetLoaner(int number) { // also works as FindLoaner method in "options"
         List<Loaner> loaner = this._loanerList.Where(x => x.number == number).ToList();
         if (loaner.Count != 1)
@@ -29,17 +32,19 @@ public class Library {
         return String.Format("Loaner number: <{0}> - Email: <{1}> - Name: <{2}> is loaner at: <{3}>", 
             loaner.First().number, loaner.First().email, loaner.First().name, this._libraryName);
     }
+
     public string GetAllLoaner() {
         string str = "";
         foreach (var item in _loanerList)
         {
             str += String.Format("Loaner number: <{0}> - Email: <{1}> - Name: <{2}> is loaner at: <{3}>\n",
-                item.number, item.email, item.name, this._libraryName);
+                item.number, item.email, item.name, this._libraryName); // add to str
         }
         return str;
     }
+
     public string LoanBook(Book book, int loanerNum) {
-        List<Loaner> loaner = this._loanerList.Where(x => x.number == loanerNum).ToList();
+        List<Loaner> loaner = this._loanerList.Where(x => x.number == loanerNum).ToList(); // get loaner with requirements
         if (loaner.Count != 1)
             return "Sorry, duplicate loaner or loaner not found";
 
@@ -54,22 +59,24 @@ public class Library {
         }
         return "Added book!";
     }
+
     public string RemoveBook(int loanerNum, string title) {
         List<Loaner> loaner = this._loanerList
             .Where(x => x.number == loanerNum).ToList();
         if (loaner.Count != 1)
             return "Sorry, duplicate loaner or loaner not found";
 
-        int bookNum = loaner.First().books
+        int bookNum = loaner.First().books // get count of books fitting requirement
             .Select(x => x.title == title)
             .ToList().Count;
 
         if (bookNum < 1)
             return "Sorry, could not find book";
 
-        loaner.First().books.RemoveAll(x => x.title == title);
+        loaner.First().books.RemoveAll(x => x.title == title); // remove all books with requirement
         return "Removed book!";
     }
+
     public string ShowBooks(int loanerNum) {
         string str = "";
         List<Book> books = this._loanerList
@@ -81,7 +88,7 @@ public class Library {
             return "Sorry, no books detected.";
 
         foreach (var item in books) {
-            str += String.Format("Title: {0} - Author: {1}", item.title, item.author);
+            str += String.Format("Title: {0} - Author: {1}", item.title, item.author); // add to book data to str
         }
 
         return str;
