@@ -12,7 +12,7 @@ namespace MyLibrary {
                 switch (Console.ReadKey().KeyChar) {
                     case 'a':
                         Console.Write("Enter id: ");
-                        int id = int.Parse(Console.ReadLine());
+                        int id = parseIntFromUser();
                         
                         Console.Write("Enter email: ");
                         string email = Console.ReadLine();
@@ -36,7 +36,7 @@ namespace MyLibrary {
                         string author = Console.ReadLine();
 
                         Console.WriteLine("Enter User index: ");
-                        int user = int.Parse(Console.ReadLine());
+                        int user = parseIntFromUser();
 
                         Console.WriteLine(lib.LoanBook(new Book(title, author), user));
                         Console.ReadLine();
@@ -44,7 +44,7 @@ namespace MyLibrary {
 
                     case 'd':
                         Console.Write("Enter User index: ");
-                        int userIndex = int.Parse(Console.ReadLine());
+                        int userIndex = parseIntFromUser();
 
                         Console.Write("Enter title: ");
                         string bookTitle = Console.ReadLine();
@@ -55,7 +55,7 @@ namespace MyLibrary {
 
                     case 'e':
                         Console.Write("Enter User index: ");
-                        int index = int.Parse(Console.ReadLine());
+                        int index = parseIntFromUser();
 
                         Console.WriteLine(lib.ShowBooks(index));
                         Console.ReadLine();
@@ -85,6 +85,23 @@ namespace MyLibrary {
             Console.WriteLine("e: Show Books");
             Console.WriteLine("x: Finish");
             Console.WriteLine("--------------------------");
+        }
+        static int parseIntFromUser() {
+            int result;
+            while (true) {
+                string str = Console.ReadLine();
+                try {
+                    result = int.Parse(str);
+                    break;
+                }
+
+                catch (System.FormatException) {
+                    Console.Write("Try again: ");
+                    continue;
+                }
+                break;
+            }
+            return result;
         }
     }
 }
